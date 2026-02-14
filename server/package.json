@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.13.0",
+    "@tus/azure-store": "github:sam-ayo/tus-node-server#main&path:packages/azure-store",
+    "@tus/file-store": "^2.0.0",
+    "@tus/server": "^2.3.0",
+    "express": "^5.2.1",
+    "mime": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

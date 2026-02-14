@@ -1,0 +1,6 @@
+node_modules
+dist
+server/uploads
+client/dist
+.DS_Store
+.env*
