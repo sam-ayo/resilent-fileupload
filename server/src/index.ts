@@ -3,7 +3,7 @@ import express from "express";
 import mime from "mime";
 import path from "node:path";
 import { AzureStore } from "@tus/azure-store";
-import { DefaultAzureCredential } from "@azure/identity";
+import { AzureCliCredential } from "@azure/identity";
 
 const storageAccount = "samadeoyedev";
 const storageContainer = "tusupload";
@@ -30,7 +30,7 @@ const server = new Server({
   path: "/files",
   datastore: new AzureStore({
     account: storageAccount,
-    credential: new DefaultAzureCredential(),
+    credential: new AzureCliCredential(),
     containerName: storageContainer,
   }),
   maxSize: 250 * 1024 * 1024 * 1024,
